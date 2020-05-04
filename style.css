@@ -1,0 +1,29 @@
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+  --background-color: black;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+}
+
+.controls {
+  margin: 30px;
+}
+#container {
+  display: grid;
+  margin: auto;
+  width: 80%;
+  height: 500px;
+
+  border: 2px solid #ddd;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+.grid-items {
+  background: var(--background-color);
+}

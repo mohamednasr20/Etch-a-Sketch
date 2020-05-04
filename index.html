@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>ETCH-A-SKETCH</h1>
+    <div id="controls">
+      <input
+        type="text"
+        id="grid-counts"
+        data-count="36"
+        placeholder="resize"
+      />
+      <button class="btn" data-color="red">red Color</button>
+      <button class="btn" data-color="gray">Dark Mode</button>
+      <button class="btn" id="random">Random Color</button>
+      <button class="btn" id="clear">clear</button>
+    </div>
+
+    <div id="container"></div>
+    <script src="utils.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
