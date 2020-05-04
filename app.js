@@ -17,18 +17,6 @@ const makeRows = (rows, cols) => {
 };
 makeRows(count, count);
 
-const debounce = (cb, delay = 400) => {
-  let timeoutQ;
-  return (...args) => {
-    if (timeoutQ) {
-      clearTimeout(timeoutQ);
-    }
-    timeoutQ = setTimeout(() => {
-      cb.apply(null, args);
-    }, delay);
-  };
-};
-
 const resize = () => {
   inputVal = parseInt(input.value);
   if (Number.isNaN(inputVal)) return;
