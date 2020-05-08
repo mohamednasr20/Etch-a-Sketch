@@ -1,18 +1,18 @@
-const container = document.getElementById("container");
+const board = document.getElementById("board");
 const input = document.getElementById("grid-counts");
 const controls = document.getElementById("controls");
 const random = document.getElementById("random");
 let count = parseInt(input.dataset.count);
 const clear = document.getElementById("clear");
 
-// creat grids items
+// creat grid items
 
 const makeRows = (rows, cols) => {
-  container.style.setProperty("--grid-rows", rows);
-  container.style.setProperty("--grid-cols", cols);
+  board.style.setProperty("--grid-rows", rows);
+  board.style.setProperty("--grid-cols", cols);
   for (c = 0; c < rows * cols; c++) {
     let cell = document.createElement("div");
-    container.appendChild(cell).classList.add("items");
+    board.appendChild(cell).classList.add("items");
   }
 };
 makeRows(count, count);
@@ -23,18 +23,13 @@ const resize = () => {
   makeRows(inputVal, inputVal);
 };
 
-const setRBG = () => {
-  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-  return `#${randomColor}`;
-};
-
 let root = document.documentElement;
 controls.addEventListener("click", (e) => {
   let btn = e.target;
   random.dataset.color = setRBG();
   if (!btn.dataset.color) return;
   if (btn.dataset.color === "gray") {
-    container.style.background = "black";
+    board.style.background = "black";
   }
   root.style.setProperty("--background-color", btn.dataset.color);
 });
@@ -45,7 +40,7 @@ clear.addEventListener("click", () => {
 
 input.addEventListener("input", debounce(resize, 400));
 
-container.addEventListener("mouseover", (e) => {
+board.addEventListener("mouseover", (e) => {
   if (!e.target.classList.contains("items")) return;
   e.target.classList.add("grid-items");
 });

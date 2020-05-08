@@ -8,20 +8,46 @@
 }
 body {
   text-align: center;
+  background-color: rgb(83, 90, 78);
+}
+.container {
+  display: flex;
+  margin: 20px 15px;
+}
+header {
+  color: #fff;
+  font-size: 1.2rem;
+}
+#grid-counts {
+  margin: 5px;
+  width: 50px;
 }
 
-.controls {
+#controls {
+  display: flex;
+  flex-direction: column;
   margin: 30px;
 }
-#container {
+
+#board {
+  background-color: #fff;
+  border-radius: 3%;
+  flex: 2;
   display: grid;
   margin: auto;
   width: 80%;
-  height: 500px;
-
+  height: 80vh;
   border: 2px solid #ddd;
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+.btn {
+  margin: 10px;
+  padding: 3px;
+  font-size: 1rem;
+  background-color: rgb(187, 204, 212);
+  color: rgb(78, 94, 94);
+  border-radius: 5%;
 }
 
 .grid-items {

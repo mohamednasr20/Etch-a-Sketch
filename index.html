@@ -7,21 +7,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>ETCH-A-SKETCH</h1>
-    <div id="controls">
-      <input
-        type="text"
-        id="grid-counts"
-        data-count="36"
-        placeholder="resize"
-      />
-      <button class="btn" data-color="red">red Color</button>
-      <button class="btn" data-color="gray">Dark Mode</button>
-      <button class="btn" id="random">Random Color</button>
-      <button class="btn" id="clear">clear</button>
+    <header>
+      <h1>ETCH-A-SKETCH</h1>
+      <div id="set-grid">
+        <label for="grid-counts">Set Grid: default(64)</label>
+        <input
+          type="text"
+          name="grid-counts"
+          id="grid-counts"
+          data-count="64"
+        />
+      </div>
+    </header>
+    <div class="container">
+      <div id="board"></div>
+      <div id="controls">
+        <button class="btn" data-color="red">Red Color</button>
+        <button class="btn" data-color="gray">Dark Mode</button>
+        <button class="btn" id="random">Random Color</button>
+        <button class="btn" id="clear">Clear</button>
+      </div>
     </div>
-
-    <div id="container"></div>
     <script src="utils.js"></script>
     <script src="app.js"></script>
   </body>
